@@ -1,0 +1,60 @@
+ <table class="table table-striped">
+    <thead>
+      <tr>
+      
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Requester Name</th>
+          <th>Image </th>
+        <th>Status</th>
+        
+
+
+
+        
+
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+
+
+        <% @books.each do |book| %>
+        <tr>
+       
+
+        <td>  <%=  book.book.name %></td>
+        <td>  <%=  book.book.author %></td>
+        <td>  <%=  book.user.name %></td>
+        <td> <%= image_tag(book.book.book_image, style: 'height:30px;width:30px;') %></td>
+      
+
+        
+        <td>  <%=  book.status  %></td>
+        
+
+       
+
+      
+
+      
+      
+      
+
+
+
+      </tr>
+  
+
+    <%end%>
+
+
+
+     
+
+    </tbody>
+  </table>
+
+

@@ -1,0 +1,20 @@
+Hi Admin, <%= @book.book.name%> is returned by the <%= @book.user.name %>
+    User details
+    ------------------------------------------------------------
+
+    Name: <%= @book.user.name %>
+    Email: <%= @book.user.email %>
+    Address: <%= @book.user.address %>
+    ------------------------------------------------------------
+
+    Book details
+
+    ------------------------------------------------------------
+    
+    Name: <%= @book.book.name %>
+    Book Issued Date: <%= @book.issue_date %>
+    book return date: <%= @book.return_date %>
+    user return date: <%= @book.user_returned_date %>
+    fine: <%= @fine %>
+    ------------------------------------------------------------   
+

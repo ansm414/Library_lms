@@ -1,0 +1,22 @@
+<div class="show1">
+<div class="show2 p-5 text-center">
+
+<h4 class="font-weight-bold"> Adding new categories </h4>
+
+
+ <%= form_with model: [:admins, @category], data: { turbo: false } do |form|%> 
+
+<div class="form-group ">
+<%= form.label :name, class: 'font-weight-bold' %><br>
+<%= form.text_field :name, class:"form-control" %>
+</div>
+  <% @category.errors.full_messages_for(:name).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+        <%= form.submit class: 'btn btn-success'%>
+
+ 
+       
+<%end%>
+</div>
+</div>

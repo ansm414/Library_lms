@@ -1,0 +1,2 @@
+module Readers::TopRatedBooksHelper
+end

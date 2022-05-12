@@ -1,0 +1,55 @@
+<div class="show1">
+<div class="show2 p-5">
+<h4 class="font-weight-bold text-center"> Add Book </h4>
+
+<%= form_with model:[:admins, @book],  data: { turbo: false } do |form| %>
+
+<div>
+    <%= form.label :name, class: "font-weight-bold"%>
+    <%= form.text_field :name, class: "form-control" %>
+
+     <% @book.errors.full_messages_for(:name).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+</div>
+
+<div>
+    <%= form.label :author, class: "font-weight-bold"%>
+    <%= form.text_field :author, class: "form-control" %>
+    <% @book.errors.full_messages_for(:author).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+</div>
+<div>
+
+    <%= form.label :description, class: "font-weight-bold" %>
+    <%= form.text_field :description, class: "form-control" %>
+    <% @book.errors.full_messages_for(:description).each do |message| %>
+     <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+</div>
+
+<div>
+<%= form.label :"Category", class: "font-weight-bold" %><br>
+<%= form.collection_select :category_id, Category.all, :id, :name, prompt: true,  class: "form-control" %>
+   <% @book.errors.full_messages_for(:category_id).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+</div>
+
+  <div>
+  <%= form.label :"Image", class: "font-weight-bold" %>
+  <%= form.file_field :book_image, class: "form-control" %>
+  <% @book.errors.full_messages_for(:book_image).each do |message| %>
+      <div class="alert alert-danger"><%= message %></div>
+    <% end %>
+  </div>
+
+<div class="text-center mt-2">
+    <%= form.submit class: 'btn btn-success' %>
+</div>
+
+
+<%end%>
+</div>
+</div>

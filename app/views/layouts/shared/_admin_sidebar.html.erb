@@ -1,0 +1,65 @@
+<div class="sidebar bg-dark">
+  <% if current_user.user_image.attached?%>
+  <div class="text-center pt-3">
+  <%= image_tag(current_user.user_image, class: 'w-50 rounded')  %>
+  <p class="text-center text-white"> <%= current_user.name.upcase%> </p>
+  </div>
+
+  <%else%>
+ <div class="text-center pt-3">
+  <%= image_tag("img_avatar.png", class: 'w-50 rounded')  %>
+  <p class="text-center text-white"> <%= current_user.name.upcase%> </p>
+  </div>
+  <%end%>
+
+  
+        <ul type="none">
+            
+                <%= link_to 'Categories',  admins_categories_path, class: 'btn btn-info mb-3 btn-sm', style: "width:100px;" %>
+                
+                
+                 <div class="dropdown">
+                  <%= link_to 'Books', "", class: ' btn btn-info mb-3 btn-sm', style: "width:100px;" %>      
+                    <div class="dropdown-content">
+                      <%= link_to 'All Books', admins_books_path, class: 'btn btn-sm ' %>      
+                      <%= link_to 'Available Books', admins_available_path, class: 'btn btn-sm ' %> 
+                      <%= link_to 'Unavailable Books', admins_unavailable_path, class: 'btn btn-sm' %>      
+                    </div>    
+                </div>
+
+               <div class="dropdown">
+                <%= link_to 'Requested Books', "", class: ' btn btn-info mb-3 btn-sm', style: "width:100px;" %>
+
+                   <div class="dropdown-content">
+                      <%= link_to 'Rejected Books', admins_rejected_path, class: 'btn btn-sm ' %>      
+                      <%= link_to 'Pending Books', admins_pending_path, class: 'btn btn-sm ' %>   
+                    </div> 
+
+                </div>
+
+           
+                <%= link_to 'Approved Books', admins_issued_books_path, class: ' btn btn-info mb-3 btn-sm ', style: "width:100px;" %>
+              
+
+                
+                <%= link_to 'Returned Books', admins_returnedbooks_path, class: ' btn btn-info mb-3 btn-sm', style: "width:100px;"%>
+                
+
+                <div class="dropdown">
+                <%= link_to 'Fines', "", class: ' btn btn-info mb-3 btn-sm', style: "width:100px;" %>
+                    <div class="dropdown-content">
+                      <%= link_to 'Paid Fines', admins_paidfines_path, class: 'btn btn-sm ' %>      
+                      <%= link_to 'Unpaid Fines', admins_unpaidfines_path, class: 'btn btn-sm ' %>   
+                    </div> 
+                </div>
+           
+               </ul>
+
+              
+ 
+         
+
+
+
+</div>
+

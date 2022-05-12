@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Congratulation, Your request for <%= @book.book.name%> is approved</p>
+    <p>User details</p><br>
+    --------------------------
+    <p>Name: <%= @book.user.name %></p>
+    <p>Email: <%= @book.user.email %></p>
+    <p>Address: <%= @book.user.address %></p>
+   ------------------------------------------------------------
+
+    These are the details of the issued book
+
+    -----------------------------------------------------------
+    <p>Name: <%= @book.book.name %></p>
+    <p>Issude Date: <%= @book.issue_date %></p>
+    <p>Return Date: <%= @book.return_date %></p>
+   ------------------------------------------------------------    
+
+  </body>
+</html>

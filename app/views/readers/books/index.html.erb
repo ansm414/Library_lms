@@ -1,0 +1,104 @@
+
+<%= form_with url: "" do |form| %>
+<%= form.label :"Category" %>
+<%= form.collection_select :id, Category.all, :id, :name, prompt: true , id: "ctg"%>
+<%end%>
+
+
+<div class="row">
+<div class="col-12 col-md-12 col-lg-12 col-sm-12">
+
+<%= search_form_for [:readers,@q], class: "form-inline" do |f| %>
+  <div class=" text-center w-25">
+  <%= f.label :name_cont,"Name"%>
+  <%= f.search_field :name_cont, class: "form-control"%>
+  </div>
+
+  <div class="text-center w-25">
+  <%= f.label :author_cont%>
+  <%= f.search_field :author_cont, class: "form-control"%>
+  </div>
+
+  <div class="text-center w-25">
+  <%= f.label :description_cont%>
+  <%= f.search_field :description_cont, class: "form-control"%>
+  </div>
+  <div class="text-center w-25">
+  <%= f.label :category_name_cont%>
+  <%= f.search_field :category_name_cont, class: "form-control"%>
+  </div>
+  <div class="w-100 text-center mt-3">
+  <%= f.submit class: 'btn  btn-success' %>
+  </div>
+<% end %>
+
+</div>
+
+
+</div>
+
+   <div class="row" id="abc">
+   <% @books.each do |book| %>
+
+
+      <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="card text-center mt-3">
+            
+            <%= image_tag(book.book_image, style: "height:200px", class: 'img-thumbnail'  )%>
+         <div class="card-body">
+            <h4 class="card-title"> <b><%= book.name.upcase %></b></h4>
+            <h5 class="card-title">By: <b><%= book.author %></b></h5>
+            
+            
+         </div>
+         <% if book.available==true %>
+         <div class="card-footer bg-info">
+              <h5> <%= link_to "Request Book", readers_book_path(book), class: 'text-white font-weight-bold' %></h5>
+         </div>
+         <%else%>
+          <div class="card-footer bg-info">
+              <h5 class="text-white font-weight-bold">Book Is Unavailable</h5>
+         </div>
+         <%end%>
+
+      </div>
+
+    </div>
+   
+      <%end%>
+   </div>
+
+
+  <div style="display:flex;justify-content:center;margin-top:10px;">
+  <%= paginate @books %>
+  </div>
+<script>
+
+$(document).ready(function()
+
+{
+    
+   $('select').on("change",function(e){
+       var data_book=e.target.value;
+    //    console.log(data_book)
+       $.ajax({
+        type:"GET",
+        url: "/togglebooks",
+        data: {data: data_book},
+       
+
+        success: function(data){
+            
+            console.log("ok"+data_book);
+},
+    error: function(XMLHttpRequest, textStatus, errorThrown){
+     console.log(XMLHttpRequest.responseText);
+    }
+    });
+
+   });
+}
+);
+
+
+</script>

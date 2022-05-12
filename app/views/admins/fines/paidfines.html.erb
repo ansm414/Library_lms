@@ -1,0 +1,65 @@
+<h3 class="font-weight-bold text-center text-info mt-3">All  Paid Fines</h3>
+ <table class="table table-striped">
+    <thead>
+      <tr>
+      <th> ID </th>
+      <th> Book </th>
+      <th> User</th>
+
+
+        <%
+=begin%>
+ <th>Issued Book id</th> 
+<%
+=end%>
+        <th>Fine</th>
+    
+        <th> Status </th>
+
+       
+
+
+
+        
+
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+
+
+        <% @fines.each do |fine| %>
+        <tr>
+        <td>  <%=  fine.id %></td>
+        <td>  <%=  fine.issued_book.book.name %></td>
+        <td>  <%=  fine.issued_book.user.name %></td>
+
+
+        <%
+=begin%>
+ <td>  <%=  fine.issued_book_id %></td> 
+<%
+=end%>
+        <td>  <%=  fine.fine %></td>
+
+        <% if fine.paid==true%>
+        <td><p>Yes</p></td>
+        <%end%>
+
+      </tr>
+  
+
+    <%end%>
+
+
+
+     
+
+    </tbody>
+  </table>
+
+
+
+

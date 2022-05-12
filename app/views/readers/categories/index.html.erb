@@ -1,0 +1,16 @@
+
+<h1>I am Reader </h1>
+
+
+<% if @categories.empty? %>
+<h1> No categories yet </h1>
+<%else%>
+
+<% @categories.each do |category| %>
+
+<%= link_to category.name,  [:readers, category]  %>
+
+<%end%>
+
+
+<%end%>

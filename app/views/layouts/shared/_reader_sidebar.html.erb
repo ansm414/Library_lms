@@ -1,0 +1,62 @@
+
+<div class="sidebar bg-dark">
+
+  <div class="text-center pt-1">
+  <%= image_tag(current_user.user_image, class: 'w-50 rounded-circle') %>
+  <p class="text-center text-white"> <%= current_user.name.upcase%> </p>
+  </div>
+  
+        <ul type="none" >
+                
+                 <div class="dropdown">
+                <%= link_to 'Books', "", class: 'nav-link btn btn-info mb-2 btn-sm ', style: "width:100px;" %>      
+                    <div class="dropdown-content">
+                      <%= link_to 'All Books', readers_books_path, class: 'nav-link  btn-sm ' %>      
+                      <%= link_to 'Available Books', readers_available_path, class: 'nav-link  btn-sm ' %> 
+                      <%= link_to 'Unavailable Books', readers_unavailable_path, class: 'nav-link  mb-2 btn-sm ' %>      
+
+                      
+                    </div>    
+                </div>
+
+                <div class="dropdown">
+                <%= link_to 'Requested Books', "", class: 'nav-link btn btn-info mb-2 btn-sm',style: "width:100px;" %>
+
+                   <div class="dropdown-content">
+                      <%= link_to 'Rejected Books', readers_rejected_path, class: 'nav-link  btn-sm ' %>      
+                      <%= link_to 'Pending Books', readers_pending_path, class: 'nav-link  btn-sm ' %>   
+                    </div> 
+
+                </div>
+
+                
+                <%= link_to 'Approved Books', readers_issued_books_path, class: 'nav-link btn btn-info mb-2 btn-sm',style: "width:100px;" %>
+                
+
+                
+                <%= link_to 'Returned Books', readers_returnedbooks_path, class: 'nav-link btn btn-info mb-2 btn-sm',style: "width:100px;" %>
+              
+
+                  
+                <%= link_to 'My Ratings', readers_ratings_path, class: 'nav-link btn btn-info mb-2 btn-sm',style: "width:100px;" %>
+              
+
+                
+                <%= link_to 'Top Rated Books', readers_top_rated_books_path, class: 'nav-link btn btn-info mb-2 btn-sm',style: "width:100px;" %>
+              
+
+                <div class="dropdown">
+                <%= link_to 'Books Fines', "", class: 'nav-link btn btn-info mb-2 btn-sm',style: "width:100px;" %>
+                <div class="dropdown-content">
+                      <%= link_to 'Paid Fines', readers_paidfines_path, class: 'nav-link  btn-sm ' %>      
+                      <%= link_to 'Unpaid Fines', readers_unpaidfines_path, class: 'nav-link  btn-sm ' %>   
+                    </div> 
+                </div>
+               </ul>
+       
+
+
+
+
+</div>
+

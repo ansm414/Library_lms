@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LibraryManagement</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+
+  <body>
+    <%= render "layouts/shared/navbar" %>
+    <div class="row">
+    <% if user_signed_in? %>
+    
+    <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
+
+          <% if current_user.role.name=="Admin" %>
+          <div class="">
+          <%= render "layouts/shared/admin_sidebar" %>
+        </div>
+          <%else%>
+          <%= render "layouts/shared/reader_sidebar" %>
+
+          <%end%>
+     </div>
+
+    <%end%>
+      
+      <div class="col-12 col-md-10 col-sm-12 col-lg-10">
+      <div id ="outtime1">
+      <% if notice %>
+      <div class="alert alert-success w-50 " role="alert" align="center">
+       <p class="notice" ><%= notice %></p>
+      </div>
+      <%end%>
+      <% if alert %>
+      <div class="alert alert-danger w-50 "  role="alert" align="center">
+       <p class="alert" ><%= alert %></p>
+      </div>
+      <%end%>
+      </div>
+    <%= yield %>
+     </div>
+     </div>
+  </div>
+<script>
+ setTimeout(()=>{
+        $('#outtime1').hide();
+    },3000);
+</script>
+ 
+
+
+  </body>
+</html>

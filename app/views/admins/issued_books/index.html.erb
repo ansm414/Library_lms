@@ -1,0 +1,45 @@
+<h3 class="text-center"> Issued Books </h3>
+ <table class="table table-striped">
+    <thead>
+      <tr>
+      
+        <th>Book</th>
+        <th>Author</th>
+        <th>Issue Date</th>
+        <th>Return date </th>
+        <th>Returned </th>
+        <th>User Returned date </th>
+        <th> Image</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% @books.each do |book| %>
+        <tr>
+      
+
+        <td>  <%=  book.book.name %></td>
+        <td>  <%=  book.book.author %></td>
+        <td>  <%=  book.issue_date %></td>
+        <td>  <%=  book.return_date %></td>
+         <% if book.returned==true %>
+        <td> Yes </td>
+        <%else%>
+        <td> Pending </td>
+        <%end%>
+        <td>  <%=  book.user_returned_date %></td>
+        <td>  <%= image_tag(book.book.book_image, style:'height:30px;width:30px;') %></td>
+      </tr>
+  
+
+    <%end%>
+
+
+
+     
+
+    </tbody>
+  </table>
+
+
+
+

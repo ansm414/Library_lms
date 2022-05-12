@@ -1,0 +1,43 @@
+<h3 class="font-weight-bold text-center text-info mt-3">All Your Pending Requests</h3>
+ 
+ 
+ <table class="table table-striped">
+    <thead>
+      <tr>
+      
+        <th>Book</th>
+        <th>Author</th>
+        <th>Requester </th>
+        <th>Status</th>
+        <th>Available</th>
+        <th>Image</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+
+        <% @books.each do |book| %>
+        <tr>
+        
+
+        <td>  <%=  book.book.name %></td>
+        <td>  <%=  book.book.author %></td>
+        <td>  <%=  book.user.name %></td>
+        <td>  <%=  book.status  %></td>
+        <td>  <%=  book.book.available  %></td>
+        <td>  <%= image_tag(book.book.book_image, style:"height:30px;width:30px;", class: "rounded") %></td>
+
+      </tr>
+  
+
+    <%end%>
+
+
+
+     
+
+    </tbody>
+  </table>
+
+

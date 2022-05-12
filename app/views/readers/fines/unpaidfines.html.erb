@@ -1,0 +1,62 @@
+<h3 class="font-weight-bold text-center text-info mt-3">All Your Un-paid Fines</h3>
+
+
+
+
+ <table class="table table-striped">
+    <thead>
+      <tr>
+      <th> ID </th>
+      <th> Book Name </th>
+      <th> User Name </th>
+  <th>Issued Book id</th>
+        <th>Fine</th>
+    
+        <th> Status </th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+
+
+        <% @fines.each do |fine| %>
+        <tr>
+        <td>  <%=  fine.id %></td>
+        <td>  <%=  fine.issued_book.book.name %></td>
+        <td>  <%=  fine.issued_book.user.name %></td>
+
+
+        <td>  <%=  fine.issued_book_id %></td>
+        <td>  <%=  fine.fine %></td>
+
+        <%if fine.fine==true%>
+        <td>  <p>paid</p></td>
+        <%else%>
+        <td> <p>Unpaid</p></td>
+        <%end%>
+
+      
+      
+
+     <% if fine.paid==true %>
+        <td><%= link_to "Pay Fine", "/readers/payfine/"+fine.id.to_s, class: "btn btn-warning btn-sm disabled" %></td>
+        <%else%>
+        <td><%= link_to "Pay Fine", "/readers/payfine/"+fine.id.to_s, class: "btn btn-warning btn-sm" %></td>
+        <%end%>
+
+      </tr>
+  
+
+    <%end%>
+
+
+
+     
+
+    </tbody>
+  </table>
+
+
+
+

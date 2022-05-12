@@ -1,0 +1,2 @@
+module Readers::RatingsHelper
+end

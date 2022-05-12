@@ -1,0 +1,32 @@
+
+<%
+=begin%>
+ <h1> Book Details </h1>
+
+<p> <%= @book.name %> </p>
+<p> <%= @book.author %> </p>
+<p> <%= @book.description %> </p>
+<p> category <%= @book.category.name %> </p>
+
+
+<%# show.html.erb -> /cars/1 %>
+
+
+<%= link_to "Request Book", readers_path(@book) %> 
+<%
+=end%>
+
+<div class="show1">
+
+    <div class="show2 p-2">
+        <%= image_tag(@book.book_image,style: "width:100%;height:150px;", class: "img-thumbnail") %>
+        <div class="text-center">
+       <p>Book Name:  <span class="font-weight-bold"><%= @book.name %> </span><p>
+       <p> Book Author: <span class="font-weight-bold"> <%= @book.author %> </span> <p>
+       <p>Book Description:  <span class="font-weight-bold"> <%= @book.description %> </span></p>
+       <p>Book category:  <span class="font-weight-bold"> category <%= @book.category.name %> </span></p>
+       <p><%= link_to "Request Book", readers_path(@book), class: 'btn btn-info' %> </p>
+       </div>
+    <div>
+
+</div>

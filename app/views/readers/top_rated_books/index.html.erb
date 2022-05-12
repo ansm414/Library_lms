@@ -1,0 +1,38 @@
+  <% if @books.empty?%>
+ <h1 class="text-center text-info font-weight-bold mt-5">No Books rated Yet</h1>
+ <%else%>
+ 
+   <div class="row" id="abc">
+
+    <% @books.each do |book|%>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+          <div class="card text-center mt-3">
+            
+ 
+ <%= image_tag(Book.find(book.id).book_image, style: "height:200px", class: 'img-thumbnail'  )%> 
+
+         <div class="card-body">
+            <h5 class="card-title"><b><%= Book.find(book.id).name.upcase %></b></h5>
+            <h5 class="">By: <b><%= Book.find(book.id).author %></b></h5>
+            
+           
+          <p> Rating : <%= book.ratings.group("book_id").sum("rating")[book.id] %></p>
+         </div>
+
+       <% if Book.find(book.id).available==true %>
+         <div class="card-footer bg-info">
+              <h5> <%= link_to "Request Book", readers_book_path(book), class: 'text-white font-weight-bold' %></h5>
+         </div>
+        <%else%>
+         <div class="card-footer bg-info">
+              <h5 class="text-white font-weight-bold">Book Is Unavailable</h5>
+         </div>
+        <%end%>
+
+      </div>
+
+    </div>
+    <%end%>
+     
+   </div>
+  <%end%>

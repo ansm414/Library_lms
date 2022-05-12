@@ -1,0 +1,102 @@
+
+<div class="row">
+<div class="col-12 col-md-12 col-lg-12 col-sm-12">
+
+<%= search_form_for [:admins,@q], class: "form-inline" do |f| %>
+  <div class=" text-center w-25">
+  <%= f.label :name_cont,"Name"%>
+  <%= f.search_field :name_cont, class: "form-control"%>
+  </div>
+
+  <div class="text-center w-25">
+  <%= f.label :author_cont,"Author"%>
+  <%= f.search_field :author_cont, class: "form-control"%>
+  </div>
+
+  <div class="text-center w-25">
+  <%= f.label :description_cont,"Description"%>
+  <%= f.search_field :description_cont, class: "form-control"%>
+  </div>
+  <div class="text-center w-25">
+  <%= f.label :category_name_cont,"Category"%>
+  <%= f.search_field :category_name_cont, class: "form-control"%>
+  </div>
+  <div class="w-100 text-center mt-3">
+  <%= f.submit class: 'btn  btn-success' %>
+  </div>
+<% end %>
+
+</div>
+
+
+</div>
+
+
+
+<div class="row mt-4">
+<div class="col-10 col-md-10 col-lg-10 col-sm-10">
+
+ <table class="table table-striped mt-1">
+    <thead>
+      <tr>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Description</th>
+        <th>Book Available</th>
+        <th>category</th>
+        <th>Image</th>
+      
+        
+
+
+
+
+
+
+<th><%= link_to "Add Book", new_admins_book_path, class: 'btn btn-success btn-sm' %></th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      <div id="abc">
+        <% @books.each do |book| %>
+        <tr>
+        <td>  <%= book.name %></td>
+        <td>  <%= book.author %></td>
+        <td>  <%= book.description  %></td>
+        <% if book.available==true%>
+        <td> <p>Yes</p></td>
+        <%else%>
+        <td> <p>No</p></td>
+        <%end%>
+        <td>  <%= book.category.name%></td>
+        <td><%= image_tag(book.book_image, style: 'height:30px;width:30px;') %></td>
+
+
+      <td> <%= link_to "Delete",  admins_book_path(book), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %>
+        </td>
+        <td> <%= link_to "Update",  edit_admins_book_path(book), class: 'btn btn-info btn-sm' %></td>
+        
+
+
+      </tr>
+  
+
+    <%end%>
+
+  </div>
+
+     
+
+    </tbody>
+  </table>
+ <div style="display:flex;justify-content:center;">
+  <%= paginate @books %>
+  </div>
+
+
+
+</div>
+</div>
+

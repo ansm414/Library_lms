@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  book: one
+  issue_date: 2022-04-20 10:58:51
+  return_date: 2022-04-20 10:58:51
+  returned: 1
+  user_returned_date: 2022-04-20 10:58:51
+
+two:
+  user: two
+  book: two
+  issue_date: 2022-04-20 10:58:51
+  return_date: 2022-04-20 10:58:51
+  returned: 1
+  user_returned_date: 2022-04-20 10:58:51

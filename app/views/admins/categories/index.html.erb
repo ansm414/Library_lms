@@ -1,0 +1,54 @@
+<div class="container">
+<div align="center">
+<div class="w-25">
+<%= search_form_for [:admins,@q] do |f| %>
+<div class="form-group">
+  <%= f.label :name_cont, "Search Category Name", class: "font-weight-bold"%>
+  <%= f.search_field :name_cont , class: "form-control"%>
+  </div>
+  <%= f.submit class: "btn btn-sm btn-success" %>
+<% end %>
+</div>
+</div>
+
+
+ <table class="table table-striped mt-4">
+    <thead>
+      <tr>
+        <th>Category Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+
+<th ><%= link_to "Add Category", new_admins_category_path, class: 'btn btn-success'
+
+%></th>
+   
+      </tr>
+    </thead>
+    <tbody>
+
+
+    <% @categories.each do |category| %>
+        <tr>
+        <td> <%= category.name %></td>
+        <td> <%= link_to "Delete",  [:admins, category], data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %>
+        </td>
+        <td> <%= link_to "Update",  edit_admins_category_path(category), class: 'btn btn-info btn-sm' %></td>
+
+      </tr>
+  
+
+    <%end%>
+
+     
+
+    </tbody>
+  </table>
+ <div style="display:flex;justify-content:center;">
+  <%= paginate @categories %>
+  </div>
+</div>
+
+
+
+<!-- Modal -->

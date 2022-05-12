@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi Admin,<%= @book.book.name%> is returned by the <%= @book.user.name %></p>
+    <p>Returner details</p><br>
+    ------------------------------------------------------------
+
+    <p>Name: <%= @book.user.name %></p>
+    <p>Email: <%= @book.user.email %></p>
+    <p>Address: <%= @book.user.address %></p>
+    ------------------------------------------------------------
+
+    Book details
+
+    ------------------------------------------------------------
+    
+    <p>Name: <%= @book.book.name %></p>
+    <p>Book Issued Date: <%= @book.issue_date %></p>
+    <p>book return date: <%= @book.return_date %></p>
+    <p>user return date: <%= @book.user_returned_date %></p>
+    <p>fine: <%= @fine %></p>
+    ------------------------------------------------------------    
+  </body>
+</html>

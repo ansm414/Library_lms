@@ -1,0 +1,24 @@
+
+
+<div class="show1">
+    <div class="show2 p-5 text-center">
+
+        <h4 class="font-weight-bold"> Give User Rating </h4>
+
+
+        <%= form_with url: "/readers/ratings"  do |form|%>
+
+
+        <div>
+
+        <%= form.label :"Rating",class: "font-weight-bold"%><br>
+
+        <%= form.range_field :rating, min: '0', max: '50', class: 'form-control' %>
+        <span> 1-50</span>
+        </div>
+
+        <%= form.submit "Give Rating", class:"btn btn-info"%>
+
+        <%end%>
+    </div>
+</div>

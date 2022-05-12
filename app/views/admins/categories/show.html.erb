@@ -1,0 +1,12 @@
+<h1> Here in show method </h1>
+
+<h1> <%=  @category.name %> </h1>
+
+
+<%= link_to "Update", edit_admins_category_path(@category), class: 'btn btn-sm btn-info' %>
+
+<%= link_to "Delete", admins_category_path(@category), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %>
+
+
+<h1> Books </h1>
+

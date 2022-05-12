@@ -1,0 +1,50 @@
+
+
+<h3 class="font-weight-bold text-center text-info mt-3">All Your Given Ratings</h3>
+
+ <table class="table table-striped">
+    <thead>
+      <tr>
+      <th> ID </th>
+      <th> User Name </th>
+      <th> Book Name </th>
+      <th> Rating Given </th>
+      <th> Date </th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+        <% @ratings.each do |rating| %>
+        <tr>
+        <td>  <%=  rating.id %></td>
+        <td>  <%=  rating.user.name %></td>
+        <td>  <%=  rating.book.name %></td>
+        <td>  <%=  rating.rating %></td>
+        <td>  <%=  rating.created_at.to_date %></td>
+
+
+
+      
+
+      
+        
+
+
+    
+
+      </tr>
+  
+
+    <%end%>
+
+
+
+     
+
+    </tbody>
+  </table>
+
+
+
+
