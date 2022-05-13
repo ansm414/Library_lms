@@ -9,7 +9,6 @@
 Role.create(name:"Admin") 
 Role.create(name:"Reader") 
 
-
 # User.create(email:"bsem-f18-115@superior.edu.pk", role_id: 1, name:"muhammad ans",address: "iqbal town",gender: "male")
 User.create(email:"bsem-f18-115@superior.edu.pk", role_id: Role.where(name:"Admin").first.id,
  name:"muhammad ans",address: "iqbal town",gender: "male",password: 12345678,password_confirmation:12345678)
