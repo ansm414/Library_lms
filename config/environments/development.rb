@@ -10,19 +10,19 @@ config.active_storage.service = :local
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  config.action_mailer.delivery_method = :smtp
-  host = 'http://localhost:3000/' #replace with your own url
-  config.action_mailer.default_url_options = { host: host }
+  # config.action_mailer.delivery_method = :smtp
+  # host = 'http://localhost:3000/' #replace with your own url
+  # config.action_mailer.default_url_options = { host: host }
 
-  # SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :user_name            => "ans.lms414@gmail.com",
-    :password             => "faramir123*",
-    :authentication       => "plain",
-    :enable_starttls_auto => true
-  }
+  # # SMTP settings for gmail
+  # config.action_mailer.smtp_settings = {
+  #   :address              => "smtp.gmail.com",
+  #   :port                 => 587,
+  #   :user_name            => "ans.lms414@gmail.com",
+  #   :password             => "faramir123*",
+  #   :authentication       => "plain",
+  #   :enable_starttls_auto => true
+  # }
 
 
   # Do not eager load code on boot.
