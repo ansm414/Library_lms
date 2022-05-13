@@ -11,4 +11,4 @@ Role.create(name:"Reader") #-> id 9
 
 
 # User.create(email:"bsem-f18-115@superior.edu.pk", role_id: 1, name:"muhammad ans",address: "iqbal town",gender: "male")
-User.create(email:"bsem-f18-115@superior.edu.pk", role_id: 8, name:"muhammad ans",address: "iqbal town",gender: "male",password: 12345678,password_confirmation:12345678)
+# User.create(email:"bsem-f18-115@superior.edu.pk", role_id: 8, name:"muhammad ans",address: "iqbal town",gender: "male",password: 12345678,password_confirmation:12345678)
