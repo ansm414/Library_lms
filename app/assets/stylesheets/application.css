@@ -86,3 +86,9 @@
    border-radius: 20px;
    /* background-color: aqua; */
  }
+
+
+#outtime1{
+  display: grid;
+  place-items: center;
+}
