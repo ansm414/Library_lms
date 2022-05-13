@@ -10,7 +10,7 @@ module LibraryManagement
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    config.hosts << "2c06-110-39-2-86.ap.ngrok.io"
+    # config.hosts << "2c06-110-39-2-86.ap.ngrok.io"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

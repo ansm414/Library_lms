@@ -11,7 +11,7 @@ config.active_storage.service = :local
   config.cache_classes = false
 
   config.action_mailer.delivery_method = :smtp
-  host = 'https://library-management-system-ans.herokuapp.com/' #replace with your own url
+  host = 'https://library-management-system-ans.herokuapp.com' #replace with your own url
   config.action_mailer.default_url_options = { host: host }
 
   # SMTP settings for gmail
@@ -27,9 +27,9 @@ config.active_storage.service = :local
 
   # Do not eager load code on boot.
   config.eager_load = false
-  config.action_mailer.default_url_options = { host: 'https://library-management-system-ans.herokuapp.com/', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://library-management-system-ans.herokuapp.com', port: 3000 }
   # Show full error reports.
-  config.consider_all_requests_local = true
+  # config.consider_all_requests_local = true
   # config.hosts << /[a-z0-9]+\.c9users\.io/
 
 
