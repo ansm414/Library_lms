@@ -9,14 +9,14 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use pg as the database for Active Record
+# gem "pg", "~> 1.4"
 gem 'stimulus-rails'
 gem 'ratyrate'
 gem 'ransack'
 gem 'kaminari'
 gem 'pundit'
-gem 'pg'
+gem "pg", "~> 1.1"
 gem 'rack-cors'
 gem 'omniauth', '~> 2.0.4'
 gem 'omniauth-facebook'
