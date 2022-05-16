@@ -11,6 +11,7 @@ gem "sprockets-rails"
 
 # Use pg as the database for Active Record
 # gem "pg", "~> 1.4"
+gem 'stripe'
 gem 'ratyrate'
 gem 'ransack'
 gem 'kaminari'

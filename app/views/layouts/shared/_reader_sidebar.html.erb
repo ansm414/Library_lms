@@ -1,10 +1,16 @@
 
 <div class="sidebar bg-dark">
-
+  <% if current_user.user_image.attached?%>
   <div class="text-center pt-1">
   <%= image_tag(current_user.user_image, class: 'w-50 rounded-circle') %>
   <p class="text-center text-white"> <%= current_user.name.upcase%> </p>
   </div>
+   <%else%>
+ <div class="text-center pt-3">
+  <%= image_tag("img_avatar.png", class: 'w-50 rounded')  %>
+ <p class="text-center text-white"> <%= current_user.name.upcase%> </p> 
+  </div>
+  <%end%>
   
         <ul type="none" >
                 
