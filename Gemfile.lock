@@ -316,7 +316,7 @@ DEPENDENCIES
   omniauth-github!
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
-  pg (~> 1.1)
+  pg
   pry-rails
   puma (~> 5.0)
   pundit

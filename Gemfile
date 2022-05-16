@@ -11,12 +11,11 @@ gem "sprockets-rails"
 
 # Use pg as the database for Active Record
 # gem "pg", "~> 1.4"
-gem 'stimulus-rails'
 gem 'ratyrate'
 gem 'ransack'
 gem 'kaminari'
 gem 'pundit'
-gem "pg", "~> 1.1"
+gem "pg"
 gem 'rack-cors'
 gem 'omniauth', '~> 2.0.4'
 gem 'omniauth-facebook'
@@ -65,7 +64,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
-group :development do
+group :developmendt do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 

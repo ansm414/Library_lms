@@ -31,7 +31,7 @@
 
 <div>
 <%= form.label :"Category", class: "font-weight-bold" %><br>
-<%= form.collection_select :category_id, Category.all, :id, :name, prompt: true,  class: "form-control" %>
+<%= form.collection_select :category_id, Category.all, :id, :name, {}, {class: "form-control"} %>
    <% @book.errors.full_messages_for(:category_id).each do |message| %>
       <div class="alert alert-danger"><%= message %></div>
     <% end %>
