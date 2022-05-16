@@ -13,6 +13,7 @@ class Admins::BooksController < ApplicationController
         @book=Book.find(params[:id])
         authorize([:Admin, @book])
     end
+
     def create
         
         @book=Book.new(books_params)
@@ -47,7 +48,7 @@ class Admins::BooksController < ApplicationController
         @book=Book.find(params[:id])
         authorize([:Admin, @book])
         @book.destroy
-        redirect_to admins_books_path,alert: "Book has been deleted Successfully", status: 303
+        redirect_to admins_books_path, alert: "Book has been deleted Successfully", status: 303
     end
 
     def searchbook
