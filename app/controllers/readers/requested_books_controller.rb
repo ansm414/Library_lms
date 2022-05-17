@@ -7,9 +7,9 @@ class Readers::RequestedBooksController < ApplicationController
     def savebook
       @book= RequestedBook.create(user_id: current_user.id, book_id: params[:id])
         if @book.save
-            redirect_to readers_books_path, notice: "Your Request Has been Sent To Admin"
+            redirect_to readers_books_path, notice: t("request book")
         else
-            redirect_to '/'
+            redirect_to readers_books_path ,alert: t("cannot request")
         end
     end
 
@@ -18,9 +18,7 @@ class Readers::RequestedBooksController < ApplicationController
     end
 
     def rejectedbooks
-    
         @books=RequestedBook.where(status:"rejected").where(user_id: current_user.id)
-
     end
 
 end

@@ -3,25 +3,25 @@ class Readers::BooksController < ApplicationController
         @q=Book.ransack(params[:q])
         @books=@q.result(distinct:true).page(params[:page])
     end
+    
     def show
         @book=Book.find(params[:id])
     end
 
     def searchbook
         @books=Book.where(category_id:params[:data])
-         respond_to do |format|
+        respond_to do |format|
           format.js
-          format.html {root_path}
+          format.html {readers_books_path}
       end
     end
-
-    
+        
     def availablebooks
-        @books=Book.where(available: true)
+        @books=Book.available_books
     end
 
     def unavailablebooks
-        @books=Book.where(available: false)
+        @books=Book.unavailable_books
     end
 end
 

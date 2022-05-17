@@ -12,36 +12,35 @@ class Admin::BookPolicy < ApplicationPolicy
     @record = record
   end
   def index?
-    user.role.name==="Admin"
+    admin?
   end
   def new?
-    user.role.name==="Admin"
+    admin?
   end
   def update?
-    user.role.name==="Admin"
-
+   edit?
   end
   def create?
-    user.role.name==="Admin"
-
+    new?
   end
   def edit?
-    user.role.name==="Admin"
-
+    admin?
   end
   def destroy?
-    user.role.name==="Admin"
-
+    admin?
   end
   def availablebooks?
-    user.role.name==="Admin"
-
+    admin?
   end
   def unavailablebooks?
-    user.role.name==="Admin"
-
+    admin?
   end
 
+  private
+
+      def admin?
+       user.role.name===ADMIN1
+      end
 
 
 end

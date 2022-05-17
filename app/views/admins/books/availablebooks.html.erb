@@ -1,3 +1,37 @@
+<div class="row">
+<div class="col-12 col-md-12 col-lg-12 col-sm-12">
+
+<%= search_form_for [:admins,@q], class: "form-inline" do |f| %>
+  <div class=" text-center w-25">
+  <%= f.label :name_cont,"Name"%>
+  <%= f.search_field :name_cont, class: "form-control"%>
+  </div>
+
+  <div class="text-center w-25">
+  <%= f.label :author_cont,"Author"%>
+  <%= f.search_field :author_cont, class: "form-control"%>
+  </div>
+
+  <div class="text-center w-25">
+  <%= f.label :description_cont,"Description"%>
+  <%= f.search_field :description_cont, class: "form-control"%>
+  </div>
+  <div class="text-center w-25">
+  <%= f.label :category_name_cont,"Category"%>
+  <%= f.search_field :category_name_cont, class: "form-control"%>
+  </div>
+  <div class="w-100 text-center mt-3">
+  <%= f.submit class: 'btn  btn-success' %>
+  </div>
+<% end %>
+
+</div>
+
+
+</div>
+<div class="row mt-4">
+<div class="col-12 col-md-12 col-lg-12 col-sm-12">
+
  <table class="table table-striped">
     <thead>
       <tr>
@@ -8,7 +42,6 @@
         <th>category</th>
         <th>Image</th>
         <th></th>
-
 
 <th><%= link_to "Add Book", new_admins_book_path, class: 'btn btn-success btn-sm' %></th>
 
@@ -45,3 +78,8 @@
 
     </tbody>
   </table>
+  </div>
+  </div>
+   <div style="display:flex;justify-content:center;">
+  <%= paginate @books %>
+  </div>

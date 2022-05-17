@@ -31,3 +31,15 @@
 
 en:
   hello: "Hello world"
+  new_categories_created: "Category has been created successfully"
+  category_destroyed: "Category has been deleted Successfuly"
+  update_category: "Category has been updated successfully"
+  book created: "Book Has Been Created Successfully"
+  book updated: "Book Has Been updated Successfully"
+  book deleted: "Book Has Been deleted Successfully"
+  issued book: "Book Has Been Issued Successfully"
+  reject book: "Book Has Been Rejected Successfully"
+  fine:     "Fine Of This Book Has Been Paid"
+  book returned: "Book Has Been Returned"
+  request book: "Your Request Has been Sent To Admin"
+  cannot request: "Book cannot be requested at this moment"

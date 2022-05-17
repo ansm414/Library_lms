@@ -4,21 +4,18 @@ class Readers::FinesController < ApplicationController
     end
 
     def payfine
-        # binding.pry
         @fine=DueAmount.find(params[:id])
         @fine.toggle!(:paid)
-        redirect_to readers_paidfines_path , notice: "Fine Of This Book Has Been Paid"
+        redirect_to readers_paidfines_path , notice: t("fine")
     end
 
     def paidfines
-        # binding.pry
-        @fines=DueAmount.joins(:issued_book).where("issued_books.user_id = ?",  current_user.id).where(paid:true)
-        # @fines=DueAmount.where(paid:true).where(iss)
+        @fines=DueAmount.user_paid_fines(current_user.id).where(paid:true)
+
+        # @fines=DueAmount.joins(:issued_book).where("issued_books.user_id = ?",  current_user.id).where(paid:true)
     end
 
     def unpaidfines
-        @fines=DueAmount.joins(:issued_book).where("issued_books.user_id = ?",  current_user.id).where(paid:false)
+        @fines=DueAmount.user_unpaid_fines(current_user.id).where(paid:false)
     end
-
-
 end

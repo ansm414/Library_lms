@@ -5,12 +5,12 @@ class Admins::FinesController < ApplicationController
     end
     
     def paidfines
-        @fines=DueAmount.where(paid:true)
+        @fines=DueAmount.paid_fines
         authorize([:Admin,@fines])
     end
 
     def unpaidfines
-        @fines=DueAmount.where(paid:false)
+        @fines=DueAmount.unpaid_fines
         authorize([:Admin,@fines])
     end
 end

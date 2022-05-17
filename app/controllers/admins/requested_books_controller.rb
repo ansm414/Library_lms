@@ -7,12 +7,12 @@ class Admins::RequestedBooksController < ApplicationController
     end
 
     def pendingbooks
-        @books=RequestedBook.where(status: "pending")
+        @books=RequestedBook.pending_status
         authorize([:Admin, @books])
     end
 
     def rejectedbooks
-        @books=RequestedBook.where(status: "rejected")
+        @books=RequestedBook.rejected_status
         authorize([:Admin, @books])
     end
 end

@@ -12,57 +12,46 @@ class Admin::DueAmountPolicy < ApplicationPolicy
       @record = record
     end
     def index?
-      user.role.name==="Admin"
-
+      admin?
     end
     def paidfines?
-      user.role.name==="Admin"
-
+     admin?
     end
-
     def unpaidfines?
-      user.role.name==="Admin"
-
+      admin?
     end
-
     def new?
-      user.role.name==="Admin"
-
+      admin?
     end
     def update?
-      user.role.name==="Admin"
-
+     admin?
     end
-    
     def create?
-      user.role.name==="Admin"
-
+      admin?
     end
     def edit?
-      user.role.name==="Admin"
-
+     admin?
     end
     def destroy?
-      user.role.name==="Admin"
-
+     admin?
     end
     def pendingbooks?
-      user.role.name==="Admin"
-
+      admin?
     end
     def rejectedbooks?
-      user.role.name==="Admin"
-
+     admin?
     end
     def savebook?
-      user.role.name==="Admin"
-
+      admin?
     end
     def rejectbook?
-      user.role.name==="Admin"
-
+      admin?
     end
-  
+    
+    private
+      def admin?
+      user.role.name===ADMIN1
+      end
   
   end
   
